@@ -20,3 +20,5 @@ Route::get('/ourservice', [ServiceController::class, 'index'])->name('ourservice
 Route::get('/no-bake-sand-foundry-equipments', [ServiceController::class, 'equipmentshow'])->name('equipment.show');
 Route::get('/sand-mixer-unit', [ServiceController::class, 'sandMixerShow'])->name('equipment.sandMixer');
 Route::get('/mould-handaling-system', [ServiceController::class, 'mouldhandalingShow'])->name('equipment.mouldhandaling');
+Route::get('/green-sand-foundry-equipments', [ServiceController::class, 'greensandShow'])->name('equipment.greensand');
+Route::get('/lost-foam-casting-plant', [ServiceController::class, 'lostfoamShow'])->name('equipment.lostfoam');

@@ -28,4 +28,12 @@ class ServiceController extends Controller
     {
         return view('layouts.equipment.mould-handaling-system');
     }
+    public function greensandShow()
+    {
+        return view('layouts.equipment.green-sand-foundry-equipments');
+    }
+    public function lostfoamShow()
+    {
+        return view('layouts.equipment.lost-foam-casting-plant');
+    }
 }
