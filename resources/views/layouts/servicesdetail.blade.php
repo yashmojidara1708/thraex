@@ -69,7 +69,7 @@
                                                 class="icon flaticon-shape"></span>No Bake Sand Foundry
                                             Equipments</a></li>
                                     <li><a href="{{ route('equipment.sandMixer') }}"><span
-                                                class="icon flaticon-shape"></span>Sand Mixer Unit</a></li>
+                                                class="icon flaticon-shape mb-5"></span>Sand Mixer Unit</a></li>
                                     <li><a href="{{ route('equipment.mouldhandaling') }}"><span
                                                 class="icon flaticon-shape"></span>Mould Handling System</a></li>
                                 </ul>

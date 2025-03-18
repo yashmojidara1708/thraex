@@ -28,4 +28,14 @@ class ServiceController extends Controller
     {
         return view('layouts.equipment.mould-handaling-system');
     }
+    public function HomeShow(){
+        return view('layouts.index');
+    }
+    public function AboutShow(){
+        return view('layouts.about');
+    }
+    public function ContactShow(){
+        return view('layouts.contact');
+    }
+
 }

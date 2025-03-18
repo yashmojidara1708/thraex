@@ -89,7 +89,7 @@
 
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current dropdown"><a href="#">Home</a>
+                            <li class="current dropdown"><a href={{ route('home') }}>Home</a>
                                 {{-- <ul>
                                     <li><a href="index.html">Homepage Style One</a></li>
                                     <li><a href="index-2.html">Homepage Style Two</a></li>
@@ -103,12 +103,12 @@
                                     </li>
                                 </ul> --}}
                             </li>
-                            <li class="dropdown"><a href="#">About</a>
+                            <li class="dropdown"><a href={{ route('about') }}>About</a>
                                 {{-- <ul>
                                     <li><a href="about-us.html">About Us</a></li>
                                 </ul> --}}
                             </li>
-                            <li class="dropdown"><a href="#">Services</a>
+                            <li class="dropdown"><a href={{ route('equipment.show') }}>Services</a>
                                 <ul>
                                     {{-- <li><a href="services.html">Our Services</a></li>
                                     <li><a href="services-single.html">Agricultural Processing</a></li>
@@ -119,7 +119,7 @@
                                     <li><a href="services-single.html">Power and Energy</a></li> --}}
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href={{ route('contact') }}>Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
