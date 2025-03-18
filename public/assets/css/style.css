@@ -3912,6 +3912,16 @@ li {
     position: relative;
 }
 
+.services-detail h1 {
+    position: relative;
+    font-size: 25px;
+    color: #222222;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+}
+
 .services-detail h2 {
     position: relative;
     font-size: 20px;
