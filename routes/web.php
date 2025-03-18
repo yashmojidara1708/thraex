@@ -23,4 +23,6 @@ Route::get('/mould-handaling-system', [ServiceController::class, 'mouldhandaling
 Route::get('/home', [ServiceController::class, 'HomeShow'])->name('home');
 Route::get('/about', [ServiceController::class, 'AboutShow'])->name('about');
 Route::get('/contact', [ServiceController::class, 'ContactShow'])->name('contact');
+Route::get('/green-sand-foundry-equipments', [ServiceController::class, 'greensandShow'])->name('equipment.greensand');
+Route::get('/lost-foam-casting-plant', [ServiceController::class, 'lostfoamShow'])->name('equipment.lostfoam');
 

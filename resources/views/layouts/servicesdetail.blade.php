@@ -72,6 +72,12 @@
                                                 class="icon flaticon-shape mb-5"></span>Sand Mixer Unit</a></li>
                                     <li><a href="{{ route('equipment.mouldhandaling') }}"><span
                                                 class="icon flaticon-shape"></span>Mould Handling System</a></li>
+                                    <li><a href="{{ route('equipment.greensand') }}"><span
+                                                class="icon flaticon-shape"></span>Green Sand Foundry Equipments</a>
+                                    </li>
+                                    <li><a href="{{ route('equipment.lostfoam') }}"><span
+                                                class="icon flaticon-shape"></span>Lost Foam Casting Plant</a>
+                                    </li>
                                 </ul>
                             </div>
 
