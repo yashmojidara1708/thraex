@@ -20,6 +20,10 @@ class ServiceController extends Controller
     {
         return view('layouts.equipment.no-bake-sand-foundry');
     }
+    public function noBakesandShow()
+    {
+        return view('layouts.equipment.no-bake-sand-foundry');
+    }
     public function sandMixerShow()
     {
         return view('layouts.equipment.sand-mixer-unit');
