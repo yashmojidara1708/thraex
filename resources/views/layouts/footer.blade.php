@@ -11,7 +11,7 @@
                             <span class="icon flaticon-smartphone-1"></span>
                         </div>
                         <div class="text">Call Us Anytime</div>
-                        <h3>+ {{ $companyDetails->phone }}</h3>
+                        <h3>+ {{ isset($companyDetails->phone) ? $companyDetails->phone : ''  }}</h3>
                     </div>
                 </div>
 

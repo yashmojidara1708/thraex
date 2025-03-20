@@ -65,18 +65,30 @@
                                 </div>
                                 <!--List-->
                                 <ul class="list">
-                                    <li><a href="{{ route('equipment.show') }}"><span
-                                                class="icon flaticon-shape"></span>No Bake Sand Foundry
-                                            Equipments</a></li>
-                                    <li><a href="{{ route('equipment.sandMixer') }}"><span
-                                                class="icon flaticon-shape mb-5"></span>Sand Mixer Unit</a></li>
-                                    <li><a href="{{ route('equipment.mouldhandaling') }}"><span
-                                                class="icon flaticon-shape"></span>Mould Handling System</a></li>
-                                    <li><a href="{{ route('equipment.greensand') }}"><span
-                                                class="icon flaticon-shape"></span>Green Sand Foundry Equipments</a>
+                                    <li class="{{ request()->routeIs('equipment.noBakesand') ? 'active' : '' }}">
+                                        <a href="{{ route('equipment.noBakesand') }}">
+                                            <span class="icon flaticon-shape"></span>No Bake Sand Foundry Equipments
+                                        </a>
                                     </li>
-                                    <li><a href="{{ route('equipment.lostfoam') }}"><span
-                                                class="icon flaticon-shape"></span>Lost Foam Casting Plant</a>
+                                    <li class="{{ request()->routeIs('equipment.sandMixer') ? 'active' : '' }}">
+                                        <a href="{{ route('equipment.sandMixer') }}">
+                                            <span class="icon flaticon-shape mb-5"></span>Sand Mixer Unit
+                                        </a>
+                                    </li>
+                                    <li class="{{ request()->routeIs('equipment.mouldhandaling') ? 'active' : '' }}">
+                                        <a href="{{ route('equipment.mouldhandaling') }}">
+                                            <span class="icon flaticon-shape"></span>Mould Handling System
+                                        </a>
+                                    </li>
+                                    <li class="{{ request()->routeIs('equipment.greensand') ? 'active' : '' }}">
+                                        <a href="{{ route('equipment.greensand') }}">
+                                            <span class="icon flaticon-shape"></span>Green Sand Foundry Equipments
+                                        </a>
+                                    </li>
+                                    <li class="{{ request()->routeIs('equipment.lostfoam') ? 'active' : '' }}">
+                                        <a href="{{ route('equipment.lostfoam') }}">
+                                            <span class="icon flaticon-shape"></span>Lost Foam Casting Plant
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -112,7 +124,7 @@
             class="icon fa fa-long-arrow-up"></span></div>
 
 
-    <script src="{{ asset('assets/js/jquery.js') }}') }}"></script>
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/revolution.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.fancybox.pack.js') }}"></script>

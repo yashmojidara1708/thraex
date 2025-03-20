@@ -40,8 +40,8 @@
                         <div class="icon-box"><span class="flaticon-pin"></span></div>
                         <ul>
                             <li><strong>Location</strong></li>
-                            <li>{{ $companyDetails->address }}, {{ $companyDetails->city }},
-                                {{ $companyDetails->state }} - {{ $companyDetails->postal_code }}</li>
+                            <li>{{ isset($companyDetails->address) ? $companyDetails->address : ''  }}, {{ isset($companyDetails->city) ? $companyDetails->city : ''  }},
+                                {{ isset($companyDetails->state) ? $companyDetails->state : ''  }} - {{ isset($companyDetails->postal_code) ? $companyDetails->postal_code : ''  }}</li>
                         </ul>
                     </div>
 
@@ -50,7 +50,7 @@
                         <div class="icon-box"><span class="flaticon-smartphone-1"></span></div>
                         <ul>
                             <li><strong>CALL US</strong></li>
-                            <li>+{{ $companyDetails->phone }}</li>
+                            <li>+{{ isset($companyDetails->phone) ? $companyDetails->phone : ''  }}</li>
                         </ul>
                     </div>
 
@@ -89,7 +89,7 @@
 
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current dropdown"><a href={{ route('home') }}>Home</a>
+                            <li class=" {{ request()->routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a>
                                 {{-- <ul>
                                     <li><a href="index.html">Homepage Style One</a></li>
                                     <li><a href="index-2.html">Homepage Style Two</a></li>
@@ -103,12 +103,10 @@
                                     </li>
                                 </ul> --}}
                             </li>
-                            <li class="dropdown"><a href={{ route('about') }}>About</a>
-                                {{-- <ul>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                </ul> --}}
+                            <li class=" {{ request()->routeIs('about') ? 'active' : '' }}">
+                                <a href="{{ route('about') }}">About</a>
                             </li>
-                            <li class="dropdown"><a href={{ route('equipment.show') }}>Services</a>
+                            <li class=" {{ request()->routeIs('equipment.show') ? 'active' : '' }}"><a href="{{ route('equipment.show') }}">Services</a>
                                 <ul>
                                     {{-- <li><a href="services.html">Our Services</a></li>
                                     <li><a href="services-single.html">Agricultural Processing</a></li>
@@ -119,7 +117,7 @@
                                     <li><a href="services-single.html">Power and Energy</a></li> --}}
                                 </ul>
                             </li>
-                            <li><a href={{ route('contact') }}>Contact Us</a></li>
+                            <li class=" {{ request()->routeIs('contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>

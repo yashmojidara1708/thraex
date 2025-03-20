@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Thraex | {{ $companyDetails->company_name }}</title>
+    <title>Thraex | {{ isset($companyDetails->company_name) ? $companyDetails->company_name : ''  }}</title>
     <!-- Stylesheets -->
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/revolution-slider.css') }}" rel="stylesheet">
@@ -26,230 +26,92 @@
         {{-- <div class="preloader"></div> --}}
 
         <!-- Main Header-->
-        {{-- @include('layouts.header') --}}
+        @include('layouts.header')
         <!--End Main Header -->
 
-        <header class="main-header header-style-two">
-            <!-- Header Top -->
-            <div class="header-top">
-                <div class="auto-container clearfix">
-                    <!--Top Left-->
-                    <div class="top-left pull-left">
-                        <ul class="links-nav clearfix">
-                            <li>World’s Leading Industrial Solution Provider</li>
-                        </ul>
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url({{ asset('assets/images/background/5.jpg') }});">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <!--Title -->
+                    <div class="title-column col-md-6 col-sm-6 col-xs-12">
+                        <h1>CONTACT</h1>
                     </div>
-
-                    <!--Top Right-->
-                    <div class="top-right pull-right">
-                        <ul class="links-nav clearfix">
-                            <li><a href="#"><span class="icon flaticon-smartphone-1"></span> 41 0235 6789</a></li>
-                            <li><a href="#"><span class="icon flaticon-clock"></span> Mon - Sat: 10am - 5pm</a></li>
+                    <!--Bread Crumb -->
+                    <div class="breadcrumb-column col-md-6 col-sm-6 col-xs-12">
+                        <ul class="bread-crumb clearfix">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Contact</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- Header Top End -->
+        </section>
+        <!--End Page Title-->
 
-            <!--Header-Upper-->
-            <div class="header-upper">
-                <div class="auto-container">
-                    <div class="clearfix">
+        <section class="contact-form-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="column col-md-7 col-sm-12 col-sm-12">
+                        <h2>SEND US MESSAGE</h2>
+                        <div class="text">Product management twitter rockstar mass market value proposition pivot venture partnership social proof hypotheses innovator founders.</div>
 
-                        <div class="pull-left logo-outer">
-                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="" title=""></a></div>
-                        </div>
+                        <!-- Contact Form -->
+                        <div class="contact-form">
 
-                        <div class="pull-right upper-right clearfix">
-
-                            <div class="nav-outer clearfix">
-                                <!-- Main Menu -->
-                                <nav class="main-menu">
-                                    <div class="navbar-header">
-                                        <!-- Toggle Button -->
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        </button>
+                            <!--Comment Form-->
+                            <form method="post" action="https://wp.hostlin.com/nijmegan/sendemail.php" id="contact-form">
+                                <div class="row clearfix">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <input type="text" name="username" placeholder="Name">
                                     </div>
 
-                                    <div class="navbar-collapse collapse clearfix">
-                                        <ul class="navigation clearfix">
-                                            <li class="dropdown"><a href="#">Home</a>
-                                                <ul>
-                                                    <li><a href="index.html">Homepage Style One</a></li>
-                                                    <li><a href="index-2.html">Homepage Style Two</a></li>
-                                                    <li><a href="index-3.html">Homepage Style Three</a></li>
-                                                    <li class="dropdown"><a href="#">Header Styles</a>
-                                                        <ul>
-                                                            <li><a href="index.html">Header Style One</a></li>
-                                                            <li><a href="index-2.html">Header Style Two</a></li>
-                                                            <li><a href="index-3.html">Header Style Three</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="#">About</a>
-                                                <ul>
-                                                    <li><a href="about-us.html">About Us</a></li>
-                                                    <li><a href="team.html">Our Team</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="#">Services</a>
-                                                <ul>
-                                                    <li><a href="services.html">Our Services</a></li>
-                                                    <li><a href="services-single.html">Agricultural Processing</a></li>
-                                                    <li><a href="services-single.html">Chemical Research</a></li>
-                                                    <li><a href="services-single.html">Material Engineering</a></li>
-                                                    <li><a href="services-single.html">Mechanical Engineering</a></li>
-                                                    <li><a href="services-single.html">Petroleum and Gas</a></li>
-                                                    <li><a href="services-single.html">Power and Energy</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="#">Project</a>
-                                                <ul>
-                                                    <li><a href="project.html">Project</a></li>
-                                                    <li><a href="project-single.html">Project Single</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="#">Shop</a>
-                                                <ul>
-                                                    <li><a href="shop.html">Our Shop</a></li>
-                                                    <li><a href="shop-single.html">Shop Single</a></li>
-                                                    <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="#">Blog</a>
-                                                <ul>
-                                                    <li><a href="blog-grid.html">Our Blog</a></li>
-                                                    <li><a href="blog-single.html">Blog Detail</a></li>
-                                                    <li><a href="error-page.html">Error Page</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="current"><a href="contact.html">Contact Us</a></li>
-                                        </ul>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <input type="email" name="email" placeholder="Email">
                                     </div>
-                                </nav><!-- Main Menu End-->
 
-                                <!--Quote Button-->
-                                <div class="btn-outer">
-                                    <!--Search Box-->
-                                    <div class="search-box-outer">
-                                        <div class="dropdown">
-                                            <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
-                                            <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
-                                                <li class="panel-outer">
-                                                    <div class="form-container">
-                                                        <form method="post" action="https://wp.hostlin.com/nijmegan/blog.html">
-                                                            <div class="form-group">
-                                                                <input type="search" name="field-name" value="" placeholder="Search Here" required>
-                                                                <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <input type="text" name="phone" placeholder="Phone">
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12 form-group">
+                                        <input type="text" name="subject" placeholder="Subject">
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <textarea name="message" placeholder="Message"></textarea>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                        <button class="theme-btn btn-style-two" type="submit" name="submit-form">Submit Now</button>
                                     </div>
 
                                 </div>
-
-                            </div>
+                            </form>
 
                         </div>
+                        <!--End Contact Form -->
+
+                    </div>
+                    <div class="column col-md-5 col-sm-12 col-sm-12">
+                        <h2>Location</h2>
+                        <div class="map-outer">
+                            <!--Map Canvas-->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58766.54569357297!2d72.61903266121467!3d22.990369659999526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e7d33ad0c6c77%3A0x12776b71042b5eb8!2sBALAJI%20ENGINEERING%20WORKS!5e0!3m2!1sen!2sin!4v1742363162844!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <!--Contact Info-->
+                        <ul class="contact-info">
+                            <li><div class="icon"><span class="flaticon-location-pin"></span></div>20 Park St, Sydney, Australia</li>
+                            <li><div class="icon"><span class="flaticon-smartphone-1"></span></div>41 0235 6789</li>
+                            <li><div class="icon"><span class="flaticon-e-mail-envelope"></span></div>info@industry.com</li>
+                            <li><div class="icon"><span class="flaticon-clock"></span></div>Mon - Sat: 10am - 5pm</li>
+                        </ul>
 
                     </div>
                 </div>
             </div>
-
-            <!--Sticky Header-->
-            <div class="sticky-header">
-                <div class="auto-container clearfix">
-                    <!--Logo-->
-                    <div class="logo pull-left">
-                        <a href="index.html" class="img-responsive"><img src="images/logo-small.png" alt="" title=""></a>
-                    </div>
-
-                    <!--Right Col-->
-                    <div class="right-col pull-right">
-                        <!-- Main Menu -->
-                        <nav class="main-menu">
-                            <div class="navbar-header">
-                                <!-- Toggle Button -->
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                </button>
-                            </div>
-
-                            <div class="navbar-collapse collapse clearfix">
-                                <ul class="navigation clearfix">
-                                    <li class="dropdown"><a href="#">Home</a>
-                                        <ul>
-                                            <li><a href="index.html">Homepage Style One</a></li>
-                                            <li><a href="index-2.html">Homepage Style Two</a></li>
-                                            <li><a href="index-3.html">Homepage Style Three</a></li>
-                                            <li class="dropdown"><a href="#">Header Styles</a>
-                                                <ul>
-                                                    <li><a href="index.html">Header Style One</a></li>
-                                                    <li><a href="index-2.html">Header Style Two</a></li>
-                                                    <li><a href="index-3.html">Header Style Three</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">About</a>
-                                        <ul>
-                                            <li><a href="about-us.html">About Us</a></li>
-                                            <li><a href="team.html">Our Team</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">Our Services</a></li>
-                                            <li><a href="services-single.html">Agricultural Processing</a></li>
-                                            <li><a href="services-single.html">Chemical Research</a></li>
-                                            <li><a href="services-single.html">Material Engineering</a></li>
-                                            <li><a href="services-single.html">Mechanical Engineering</a></li>
-                                            <li><a href="services-single.html">Petroleum and Gas</a></li>
-                                            <li><a href="services-single.html">Power and Energy</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Project</a>
-                                        <ul>
-                                            <li><a href="project.html">Project</a></li>
-                                            <li><a href="project-single.html">Project Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Shop</a>
-                                        <ul>
-                                            <li><a href="shop.html">Our Shop</a></li>
-                                            <li><a href="shop-single.html">Shop Single</a></li>
-                                            <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                        <ul>
-                                            <li><a href="blog-grid.html">Our Blog</a></li>
-                                            <li><a href="blog-single.html">Blog Detail</a></li>
-                                            <li><a href="error-page.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="current"><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </nav><!-- Main Menu End-->
-                    </div>
-
-                </div>
-            </div>
-            <!--End Sticky Header-->
-
-        </header>
+        </section>
 
         <!--Main Slider-->
         {{-- @include('layouts.slider') --}}
@@ -387,7 +249,7 @@
     <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target=".main-header"><span
             class="icon fa fa-long-arrow-up"></span></div>
-    <script src="{{ asset('assets/js/jquery.js') }}') }}"></script>
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/revolution.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.fancybox.pack.js') }}"></script>
