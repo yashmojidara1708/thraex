@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,5 @@ Route::get('/about', [ServiceController::class, 'AboutShow'])->name('about');
 Route::get('/contact', [ServiceController::class, 'ContactShow'])->name('contact');
 Route::get('/green-sand-foundry-equipments', [ServiceController::class, 'greensandShow'])->name('equipment.greensand');
 Route::get('/lost-foam-casting-plant', [ServiceController::class, 'lostfoamShow'])->name('equipment.lostfoam');
+Route::post('/contact-submit', [ContactUsController::class, 'store'])->name('contact.submit');
 
