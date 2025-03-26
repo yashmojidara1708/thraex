@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Thraex | {{ isset($companyDetails->company_name) ? $companyDetails->company_name : '' }}</title>
+    <title> {{ $data['company_name'] ?? '' }} </title>
     <!-- Stylesheets -->
     <link href="{{ asset('assets/frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/revolution-slider.css') }}" rel="stylesheet">
@@ -109,18 +109,14 @@
                         <!--Contact Info-->
                         <ul class="contact-info">
                             <li>
-                                <div class="icon"><span class="flaticon-location-pin"></span></div>20 Park St, Sydney,
-                                Australia
+                                <div class="icon"><span class="flaticon-location-pin"></span></div>{{ $data['address'] ?? '' }}
                             </li>
                             <li>
-                                <div class="icon"><span class="flaticon-smartphone-1"></span></div>41 0235 6789
+                                <div class="icon"><span class="flaticon-smartphone-1"></span></div>{{ $data['phone'] ?? '' }}
                             </li>
                             <li>
                                 <div class="icon"><span class="flaticon-e-mail-envelope"></span></div>
-                                info@industry.com
-                            </li>
-                            <li>
-                                <div class="icon"><span class="flaticon-clock"></span></div>Mon - Sat: 10am - 5pm
+                                {{ $data['email1'] ?? '' }} <br> {{ $data['email2'] ?? '' }}
                             </li>
                         </ul>
 

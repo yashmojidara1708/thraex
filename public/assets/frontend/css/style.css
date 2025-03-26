@@ -2482,6 +2482,7 @@ li {
     font-weight: 700;
     margin-top: 8px;
     font-family: 'Lato', sans-serif;
+    text-align: left;
 }
 
 .main-footer .upper-box .footer-info-box:last-child {

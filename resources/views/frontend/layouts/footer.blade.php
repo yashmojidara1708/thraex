@@ -11,7 +11,7 @@
                             <span class="icon flaticon-smartphone-1"></span>
                         </div>
                         <div class="text">Call Us Anytime</div>
-                        <h3>+ {{ isset($companyDetails->phone) ? $companyDetails->phone : ''  }}</h3>
+                        <h3>+{{ $data['phone'] ?? '' }}</h3>
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@
                             <span class="icon flaticon-e-mail-envelope"></span>
                         </div>
                         <div class="text">Mail Us</div>
-                        <h3>{{ isset($companyDetails->email1) ? $companyDetails->email1 : "" }}</br> {{ isset($companyDetails->email2) ? $companyDetails->email2 : "" }} </h3>
+                        <h3>{{ $data['email1'] ?? '' }}<br> {{ $data['email2'] ?? '' }} </h3>
                     </div>
                 </div>
 

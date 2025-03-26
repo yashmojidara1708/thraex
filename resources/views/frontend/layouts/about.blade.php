@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Thraex | {{ isset($companyDetails->company_name) ? $companyDetails->company_name : '' }}</title>
+    <title> {{ $data['company_name'] ?? '' }} </title>
     <!-- Stylesheets -->
     <link href="{{ asset('assets/frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/revolution-slider.css') }}" rel="stylesheet">
@@ -137,7 +137,7 @@
 
                 <div class="custom-video-box">
                     <video controls>
-                        <source src="{{ asset('assets/frontend/video/about1-vid.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('assets/frontend/video/about2-vid.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>

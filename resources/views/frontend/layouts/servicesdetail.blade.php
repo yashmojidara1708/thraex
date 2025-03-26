@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Nijmegan - Factory and Industrial HTML5 Template | Services Single</title>
+    <title> {{ $data['company_name'] ?? '' }} </title>
     <!-- Stylesheets -->
     <link href="{{ asset('assets/frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/revolution-slider.css') }}" rel="stylesheet">

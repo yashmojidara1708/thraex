@@ -61,7 +61,7 @@
                     <label class="form-label fw-bold">Company Logo (Max: 5MB)</label>
                     <input type="file" name="logo" class="form-control" accept="image/*">
                     <div id="dis_logo">
-                        @if (isset($data['logo']))
+                        @if (!empty($data['logo']))
                             <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . $data['logo']) }}"
                                 alt="Company Logo" width="100" class="img-thumbnail mt-2">
                         @endif
