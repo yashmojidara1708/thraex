@@ -126,76 +126,36 @@ $(document).ready(function () {
     $(document).on("click", ".delete", function () {
         let id = $(this).data("id");
 
-        showConfirmationToast("Are you sure you want to delete this service?", function () {
-            $.ajax({
-                url: "/admin/services/" + id,
-                type: "DELETE",
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function (response) {
-                    if (response.success) {
-                        toastr.success(response.message, "Success", { timeOut: 3000 });
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#FF5722",
+            cancelButtonColor: "#757575",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "/admin/services/" + id,
+                    type: "DELETE",
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire("Deleted!", response.message, "success");
 
-                        // Reload DataTable to remove the deleted row
-                        $(".serviceTable").DataTable().ajax.reload(null, false);
-                    } else {
-                        toastr.error("Something went wrong!", "Error", { timeOut: 3000 });
+                            // Reload DataTable
+                            $(".serviceTable").DataTable().ajax.reload(null, false);
+                        } else {
+                            Swal.fire("Error!", "Something went wrong!", "error");
+                        }
                     }
-                }
-            });
+                });
+            }
         });
     });
-
-    function showConfirmationToast(message, callback) {
-        // Clear existing toast
-        $("#toastContainer").html("");
-
-        let toastHTML = `
-            <div id="confirmToast" class="toast align-items-center border-0 show" role="alert" style="
-                width: 420px;
-                padding: 15px;
-                background: #2C2C2C; /* Dark Gray */
-                color: #FFFFFF; /* White text */
-                font-weight: bold;
-                border-left: 6px solid #FF9800; /* Orange border for contrast */
-                border-radius: 8px;
-                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-            ">
-                <div class="toast-body text-center">
-                    <p style="font-size: 16px; margin-bottom: 10px;">${message}</p>
-                    <div class="mt-2 d-flex justify-content-center">
-                        <button type="button" class="btn mx-2 px-4" id="confirmDelete" style="
-                            background: #FF5722;
-                            color: white;
-                            border: none;
-                            padding: 8px 16px;
-                            border-radius: 5px;
-                        ">Yes</button>
-                        <button type="button" class="btn mx-2 px-4" id="cancelDelete" style="
-                            background: #757575;
-                            color: white;
-                            border: none;
-                            padding: 8px 16px;
-                            border-radius: 5px;
-                        ">No</button>
-                    </div>
-                </div>
-            </div>`;
-
-        $("#toastContainer").html(toastHTML);
-
-        // Bind click events properly
-        $("#confirmDelete").off("click").on("click", function () {
-            callback();
-            $("#confirmToast").remove(); // Remove toast after action
-        });
-
-        $("#cancelDelete").off("click").on("click", function () {
-            $("#confirmToast").remove(); // Remove toast on cancel
-        });
-
-        $(".toast").toast("show");
-    }
 
 });
