@@ -31,7 +31,7 @@
                 <!-- Start::slide -->
                 <li class="slide">
                     <a href="{{ route('dashboard') }}" class="side-menu__item">
-                        <i class="bx bx-home side-menu__icon"></i>
+                        <i class="fas fa-desktop side-menu__icon"></i>
                         <span class="side-menu__label">Dashboards</span>
                     </a>
                 </li>
@@ -40,7 +40,7 @@
                 <!-- End::slide -->
                 <li class="slide">
                     <a href="{{ route('admin.services') }}" class="side-menu__item">
-                        <i class="bx bx-home side-menu__icon"></i>
+                        <i class="fas fa-tools side-menu__icon"></i>
                         <span class="side-menu__label">Services</span>
                     </a>
 
@@ -48,7 +48,7 @@
 
                 <li class="slide">
                     <a href="{{ route('admin.settings') }}" class="side-menu__item">
-                        <i class="bx bx-home side-menu__icon"></i>
+                        <i class="fas fa-cog side-menu__icon"></i>
                         <span class="side-menu__label">Settings</span>
                     </a>
 

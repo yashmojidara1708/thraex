@@ -32,7 +32,7 @@
                     <div class="logo">
                             @if (!empty($data['logo']))
                                 <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . $data['logo']) }}"
-                                    alt="Company Logo">
+                                    alt="Company Logo" style="max-width: 100%; height: auto;">
                             @endif
                         </div>
                 </div>

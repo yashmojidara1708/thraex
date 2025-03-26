@@ -507,15 +507,25 @@ li {
     z-index: 5;
 }
 
-.main-header .header-upper .logo img {
+.main-header .header-upper .logo img,
+.main-header .logo-outer .logo img {
     position: relative;
     display: inline-block;
-    max-width: 100%;
+    max-width: 200px;
+    max-height: 90px;
+    object-fit: contain;
+    /* padding: 5px; */
 }
 
 .main-header .logo-outer {
     position: relative;
-    z-index: 25;
+    /* z-index: 25; */
+    width: 220px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensures no overflow */
 }
 
 .main-header .logo-outer .logo img {
@@ -4839,6 +4849,23 @@ li {
     background-color: white; /* Ensure visibility */
     transition: all 0.3s ease-in-out;
 }
+
+/* .logo {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+    padding: 5px;
+} */
 
 .comments-area .comment .text {
     line-height: 1.7em;
