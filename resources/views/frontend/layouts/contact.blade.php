@@ -112,7 +112,7 @@
                                 <div class="icon"><span class="flaticon-location-pin"></span></div>{{ $data['address'] ?? '' }}
                             </li>
                             <li>
-                                <div class="icon"><span class="flaticon-smartphone-1"></span></div>{{ $data['phone'] ?? '' }}
+                                <div class="icon"><span class="flaticon-smartphone-1"></span></div>+91 {{ $data['phone'] ?? '' }}
                             </li>
                             <li>
                                 <div class="icon"><span class="flaticon-e-mail-envelope"></span></div>

@@ -22,7 +22,12 @@
                             <span class="icon flaticon-clock"></span>
                         </div>
                         <div class="text">Useful Links</div>
-                        <h3>Mon - Sat: 10am - 5pm</h3>
+                        <ul class="footer-links">
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/about') }}">About</a></li>
+                            <li><a href="{{ url('/ourservice') }}">Service</a></li>
+                            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                        </ul>
                     </div>
                 </div>
 

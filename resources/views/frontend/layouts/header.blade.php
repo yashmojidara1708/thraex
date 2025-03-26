@@ -54,7 +54,7 @@
                         <div class="icon-box"><span class="flaticon-smartphone-1"></span></div>
                         <ul>
                             <li><strong>CALL US</strong></li>
-                            <li>{{ $data['phone'] ?? '' }}</li>
+                            <li>+91 {{ $data['phone'] ?? '' }}</li>
                         </ul>
                     </div>
 
