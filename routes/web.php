@@ -31,8 +31,14 @@ Route::get('/lost-foam-casting-plant', [App\Http\Controllers\frontend\ServiceCon
 Route::post('/contact-submit', [ContactUsController::class, 'store'])->name('contact.submit');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'dashboard']);
-    Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('dashboard');
+    // Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('admin.home');
+    // Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::get('/', function () {
+        return redirect()->route('admin.dashboard');
+    })->name('admin.home');
+
+    Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     // Service Management Routes
     Route::get('/services', [App\Http\Controllers\admin\ServiceController::class, 'index'])->name('admin.services');

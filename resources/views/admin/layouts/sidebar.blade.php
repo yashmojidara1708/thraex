@@ -29,8 +29,9 @@
                 <!-- End::slide__category -->
 
                 <!-- Start::slide -->
-                <li class="slide">
-                    <a href="{{ route('dashboard') }}" class="side-menu__item">
+
+                <li class="slide {{ request()->routeIs('admin.home') || request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('admin.dashboard') }}" class="side-menu__item">
                         <i class="fas fa-desktop side-menu__icon"></i>
                         <span class="side-menu__label">Dashboards</span>
                     </a>

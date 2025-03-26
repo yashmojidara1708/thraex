@@ -11,7 +11,7 @@
                             <span class="icon flaticon-smartphone-1"></span>
                         </div>
                         <div class="text">Call Us Anytime</div>
-                        <h3>+{{ $data['phone'] ?? '' }}</h3>
+                        <h3>+91 {{ $data['phone'] ?? '' }}</h3>
                     </div>
                 </div>
 
@@ -21,7 +21,7 @@
                         <div class="icon-box">
                             <span class="icon flaticon-clock"></span>
                         </div>
-                        <div class="text">Opening Hours</div>
+                        <div class="text">Useful Links</div>
                         <h3>Mon - Sat: 10am - 5pm</h3>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                                 <h2>ABOUT Comapny</h2>
                                 <div class="widget-content">
                                     <div class="text">
-                                        <p>Angel investor growth hacking adopters ramen funding bootstrapping
-                                            return on investment buzz business.</p>
+                                        <p>THRAEX CO. is a ingenious company, consistently working on technology innovation of foundry equipment /
+                                            heavy-duty process equipment & plant.</p>
                                     </div>
                                 </div>
                                 <div class="social-links-two">

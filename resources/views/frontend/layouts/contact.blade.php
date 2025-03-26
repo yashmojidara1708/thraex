@@ -116,7 +116,7 @@
                             </li>
                             <li>
                                 <div class="icon"><span class="flaticon-e-mail-envelope"></span></div>
-                                {{ $data['email1'] ?? '' }} <br> {{ $data['email2'] ?? '' }}
+                                {{ $data['email1'] ?? '' }} | {{ $data['email2'] ?? '' }}
                             </li>
                         </ul>
 
