@@ -29,7 +29,7 @@
 
                 <!-- Start::slide -->
                 <li class="slide">
-                    <a href="{{ route('index') }}" class="side-menu__item">
+                    <a href="{{ route('dashboard') }}" class="side-menu__item">
                         <i class="bx bx-home side-menu__icon"></i>
                         <span class="side-menu__label">Dashboards</span>
                     </a>
@@ -41,6 +41,14 @@
                     <a href="{{ route('admin.services') }}" class="side-menu__item">
                         <i class="bx bx-home side-menu__icon"></i>
                         <span class="side-menu__label">Services</span>
+                    </a>
+
+                </li>
+
+                <li class="slide">
+                    <a href="{{ route('admin.settings') }}" class="side-menu__item">
+                        <i class="bx bx-home side-menu__icon"></i>
+                        <span class="side-menu__label">Settings</span>
                     </a>
 
                 </li>
