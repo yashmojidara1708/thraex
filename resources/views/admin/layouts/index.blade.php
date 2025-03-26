@@ -2,9 +2,6 @@
 <html lang="en" dir="ltr" data-nav-layout="vertical" class="light" data-header-styles="light"
     data-menu-styles="dark">
 
-
-<!-- Mirrored from laravelui.spruko.com/tailwind/ynex/alerts by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 21 Mar 2025 11:44:45 GMT -->
-<!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -45,23 +42,20 @@
     <!-- MAIN JS -->
     <script src="{{ asset('assets/admin/assets/build/assets/main.js') }}"></script>
 
-
     <!-- Prism CSS -->
     <link rel="stylesheet" href="{{ asset('assets/admin/assets/build/assets/libs/prismjs/themes/prism-coy.min.css') }}">
 
-    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> --}}
-
-    {{-- <link rel="stylesheet" href="https://cdn.ckeditor.com/4.25.1-lts/standard/skins/moono-lisa/editor.css"> --}}
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 </head>
 
 <body>
 
     <div id="toastContainer" class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1050;"></div>
-
 
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
@@ -71,7 +65,6 @@
             @include('admin.layouts.sidebar')
             <!-- Layout container -->
             <div class="layout-page">
-
 
                 <!-- Content wrapper -->
                 <div class="content-wrapper">
@@ -95,17 +88,17 @@
                                 <ol class="flex items-center whitespace-nowrap min-w-0">
                                     <li class="text-[0.813rem] ps-[0.5rem]">
                                         <a class="flex items-center text-primary hover:text-primary dark:text-primary truncate"
-                                            href="javascript:void(0);">Dashboard<i class="ti ti-chevrons-right flex-shrink-0 text-[#8c9097] dark:text-white/50 px-[0.5rem] overflow-visible rtl:rotate-180"></i>
+                                            href="javascript:void(0);">Dashboard<i
+                                                class="ti ti-chevrons-right flex-shrink-0 text-[#8c9097] dark:text-white/50 px-[0.5rem] overflow-visible rtl:rotate-180"></i>
                                         </a>
                                     </li>
                                     <li class="text-[0.813rem] text-defaulttextcolor font-semibold hover:text-primary dark:text-[#8c9097] dark:text-white/50 "
                                         aria-current="page">
-                                         @yield('page-sub-title')
+                                        @yield('page-sub-title')
                                     </li>
                                 </ol>
                             </div>
                             @yield('admin-content')
-
 
                             <div class="content-backdrop fade"></div>
                         </div>
@@ -148,11 +141,8 @@
                 href="{{ asset('assets/admin/assets/build/assets/prism-custom-a13018d8.js') }}" />
             <script type="module" src="{{ asset('assets/admin/assets/build/assets/prism-custom-a13018d8.js') }}"></script>
 
-
             <!-- STICKY JS -->
             <script src="{{ asset('assets/admin/assets/build/assets/sticky.js') }}"></script>
-
-            {{-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> --}}
 
             <!-- APP JS -->
             <link rel="modulepreload" href="{{ asset('assets/admin/assets/build/assets/app-23e8aa1f.js') }}" />
@@ -167,13 +157,10 @@
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
             </script>
 
-            {{-- <link rel="modulepreload" href="{{ asset('assets/admin/assets/build/assets/datatable-d0054720.js') }}" /> --}}
-            {{-- <script type="module" src="{{ asset('assets/admin/assets/build/assets/datatable-d0054720.js') }}"></script> --}}
-
-            <!-- END SCRIPTS -->
-            {{-- <script src="{{ asset('assets/admin/assets/js/service.js') }}"></script> --}}
-
             <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
             <script>
                 // CKEDITOR.replace('content');
                 CKEDITOR.replace('content', {

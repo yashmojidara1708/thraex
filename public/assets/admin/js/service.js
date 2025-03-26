@@ -68,13 +68,13 @@ $(document).ready(function () {
                 success: function (response) {
                     if (response.success) {
                         let toastMessage = response.message;
-                        showToast("success", toastMessage);
+                        toastr.success(response.message, "Success", { timeOut: 3000 });
                         $("#formdata").modal("hide");
                         $("#form1")[0].reset();
                         CKEDITOR.instances["content"].setData("");
                         $(".serviceTable").DataTable().ajax.reload();
                     } else {
-                        showToast("error", "Something went wrong!");
+                        toastr.error("Something went wrong!", "Error", { timeOut: 3000 });
                     }
                 }
             });
@@ -117,7 +117,7 @@ $(document).ready(function () {
                     $('input[name="status"][value="' + response.data.status + '"]').prop("checked", true);
                     $("#formdata").modal("show");
                 } else {
-                    showToast("error", "Service not found!");
+                    toastr.error("Something went wrong!", "Error", { timeOut: 3000 });
                 }
             }
         });
@@ -135,35 +135,17 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     if (response.success) {
-                        showToast("success", response.message);
+                        toastr.success(response.message, "Success", { timeOut: 3000 });
 
                         // Reload DataTable to remove the deleted row
                         $(".serviceTable").DataTable().ajax.reload(null, false);
                     } else {
-                        showToast("error", "Error deleting record!");
+                        toastr.error("Something went wrong!", "Error", { timeOut: 3000 });
                     }
                 }
             });
         });
     });
-
-    function showToast(type, message) {
-        let toastContainer = $("#toastContainer");
-        let toastTypeClass = (type === "success") ? "bg-success" : "bg-danger";
-        let toastHTML = `
-            <div class="toast align-items-center text-white ${toastTypeClass} border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">${message}</div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>`;
-
-        toastContainer.append(toastHTML);
-        setTimeout(() => {
-            $(".toast").toast("hide");
-        }, 3000);
-    }
-
 
     function showConfirmationToast(message, callback) {
         // Clear existing toast

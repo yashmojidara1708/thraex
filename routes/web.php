@@ -30,10 +30,9 @@ Route::get('/green-sand-foundry-equipments', [App\Http\Controllers\frontend\Serv
 Route::get('/lost-foam-casting-plant', [App\Http\Controllers\frontend\ServiceController::class, 'lostfoamShow'])->name('equipment.lostfoam');
 Route::post('/contact-submit', [ContactUsController::class, 'store'])->name('contact.submit');
 
-// Route::get('/admin/index', [App\Http\Controllers\admin\AdminController::class, 'index'])->name('index');
-
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('index');
+    Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'dashboard']);
+    Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('dashboard');
 
     // Service Management Routes
     Route::get('/services', [App\Http\Controllers\admin\ServiceController::class, 'index'])->name('admin.services');
@@ -41,4 +40,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/services/fetch', [App\Http\Controllers\admin\ServiceController::class, 'fetch'])->name('admin.services.fetch');
     Route::get('/services/{id}/edit', [App\Http\Controllers\admin\ServiceController::class, 'edit'])->name('admin.services.edit');
     Route::delete('/services/{id}', [App\Http\Controllers\admin\ServiceController::class, 'destroy'])->name('admin.services.destroy');
+
+    Route::get('/settings', [App\Http\Controllers\admin\SettingsController::class, 'index'])->name('admin.settings');
+    Route::post('/settings/save', [App\Http\Controllers\admin\SettingsController::class, 'save'])->name('admin.settings.save');
+    Route::get('/settings/fetch', [App\Http\Controllers\admin\SettingsController::class, 'fetch'])->name('admin.settings.fetch');
 });
