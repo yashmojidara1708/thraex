@@ -5,7 +5,7 @@
             <div class="header-content-left">
                 <!-- Start::header-element -->
                 <div class="header-element">
-                    <div class="horizontal-logo">
+                    {{-- <div class="horizontal-logo">
                         <a href="index.html" class="header-logo">
                             <img src="build/assets/images/brand-logos/desktop-logo.png" alt="logo"
                                 class="desktop-logo">
@@ -20,7 +20,7 @@
                             <img src="build/assets/images/brand-logos/toggle-white.png" alt="logo"
                                 class="toggle-white">
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- End::header-element -->
                 <!-- Start::header-element -->
@@ -36,18 +36,42 @@
 
             <div class="header-content-right">
 
-                <!-- Switcher Icon -->
-                <div class="header-element md:px-[0.48rem]">
-                    <button aria-label="button" type="button"
-                        class="hs-dropdown-toggle switcher-icon inline-flex flex-shrink-0 justify-center items-center gap-2  rounded-full font-medium  align-middle transition-all text-xs dark:text-[#8c9097] dark:text-white/50 dark:hover:text-white dark:focus:ring-white/10 dark:focus:ring-offset-white/10"
-                        data-hs-overlay="#hs-overlay-switcher">
-                        <i class="bx bx-cog header-link-icon animate-spin-slow"></i>
-                    </button>
-                </div>
-                <!-- Switcher Icon -->
+                <!-- Header Profile -->
+                <div
+                    class="header-element md:!px-[0.65rem] px-2 hs-dropdown !items-center ti-dropdown [--placement:bottom-left]">
 
-                <!-- End::header-element -->
+                    <button id="dropdown-profile" type="button"
+                        class="hs-dropdown-toggle ti-dropdown-toggle !gap-2 !p-0 flex-shrink-0 sm:me-2 me-2 !rounded-full !shadow-none text-xs align-middle !border-0 !shadow-transparent ">
+                        <img class="inline-block rounded-full "
+                            src="{{ asset('assets/admin/assets/build/assets/images/faces/9.jpg') }}" width="32"
+                            height="32" alt="Image Description">
+                    </button>
+                    <div class="md:block hidden dropdown-profile">
+                        <p class="font-semibold mb-0 leading-none text-[#536485] text-[0.813rem] ">
+                            {{ $userList[0]['name'] ?? 'No User' }}
+                    </div>
+                    <div class="hs-dropdown-menu ti-dropdown-menu !-mt-3 border-0 w-[11rem] !p-0 border-defaultborder hidden main-header-dropdown  pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
+                        aria-labelledby="dropdown-profile">
+
+                        <ul class="text-defaulttextcolor font-medium dark:text-[#8c9097] dark:text-white/50">
+                            <li>
+                                <a href="#"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                    class="w-full ti-dropdown-item !text-[0.8125rem] !p-[0.65rem] !gap-x-0 !inline-flex">
+                                    <i class="ti ti-logout text-[1.125rem] me-2 opacity-[0.7]"></i> Log Out
+                                </a>
+                            </li>
+                        </ul>
+
+                        <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
+                            style="display: none;">
+                            @csrf
+                        </form>
+
+                    </div>
+                </div>
             </div>
+
         </div>
     </nav>
 </header>

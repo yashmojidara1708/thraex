@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use App\Models\Settings;
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -35,6 +36,21 @@ class AppServiceProvider extends ServiceProvider
         foreach ($settings as $setting) {
             $data[$setting->name] = $setting->value;
         }
-        View::share('data', $data);
+
+        $users = User::all();
+        $userList = [];
+
+        foreach ($users as $user) {
+            $userList[] = [
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email
+            ];
+        }
+
+        View::share([
+            'data' => $data,
+            'userList' => $userList
+        ]);
     }
 }
