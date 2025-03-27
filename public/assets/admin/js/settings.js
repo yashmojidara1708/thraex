@@ -72,7 +72,7 @@ $(document).ready(function () {
                 required: function(element) {
                     return $("input[name='favicon']").get(0).files.length === 0 && $("#dis_favicon img").length === 0;
                 },
-                extension: "jpg|jpeg|png|gif",
+                extension: "jpg|jpeg|png|gif|ico",
                 filesize: 2000000
             }
         },

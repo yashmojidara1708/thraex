@@ -5,14 +5,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Thraex | {{ isset($companyDetails->company_name) ? $companyDetails->company_name : '' }}</title>
+    <title> {{ $data['company_name'] ?? '' }} </title>
     <!-- Stylesheets -->
     <link href="{{ asset('assets/frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/revolution-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/frontend/css/style.css') }}" rel="stylesheet">
     <!--Favicon-->
-    <link rel="shortcut icon" href="{{ asset('assets/frontend/images/favicon.ico') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('assets/frontend/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon'])  }}" type="image/x-icon">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -109,18 +109,14 @@
                         <!--Contact Info-->
                         <ul class="contact-info">
                             <li>
-                                <div class="icon"><span class="flaticon-location-pin"></span></div>20 Park St, Sydney,
-                                Australia
+                                <div class="icon"><span class="flaticon-location-pin"></span></div>{{ $data['address'] ?? '' }}
                             </li>
                             <li>
-                                <div class="icon"><span class="flaticon-smartphone-1"></span></div>41 0235 6789
+                                <div class="icon"><span class="flaticon-smartphone-1"></span></div>+91 {{ $data['phone'] ?? '' }}
                             </li>
                             <li>
                                 <div class="icon"><span class="flaticon-e-mail-envelope"></span></div>
-                                info@industry.com
-                            </li>
-                            <li>
-                                <div class="icon"><span class="flaticon-clock"></span></div>Mon - Sat: 10am - 5pm
+                                {{ $data['email1'] ?? '' }} | {{ $data['email2'] ?? '' }}
                             </li>
                         </ul>
 

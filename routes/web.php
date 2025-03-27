@@ -2,9 +2,12 @@
 // namespace App\Http\Controllers\Admin;
 // use App\Http\Controllers\admin\AdminController;
 // use App\Http\Controllers\admin\ServiceController;
+
+use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\frontend\DashboardController;
 // use App\Http\Controllers\frontend\ServiceController;
 use Illuminate\Support\Facades\Route;
+// AdminAuthController
 use App\Http\Controllers\frontend\ContactUsController;
 
 /*
@@ -30,9 +33,19 @@ Route::get('/green-sand-foundry-equipments', [App\Http\Controllers\frontend\Serv
 Route::get('/lost-foam-casting-plant', [App\Http\Controllers\frontend\ServiceController::class, 'lostfoamShow'])->name('equipment.lostfoam');
 Route::post('/contact-submit', [ContactUsController::class, 'store'])->name('contact.submit');
 
-Route::prefix('admin')->group(function () {
-    Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'dashboard']);
-    Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::post('/admin/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('admin.logout');
+
+Route::middleware(['admin'])->prefix('admin')->group(function () {
+    // Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('admin.home');
+    // Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+    Route::get('/', function () {
+        return redirect()->route('admin.dashboard');
+    })->name('admin.home');
+
+    Route::get('/dashboard', [App\Http\Controllers\admin\AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     // Service Management Routes
     Route::get('/services', [App\Http\Controllers\admin\ServiceController::class, 'index'])->name('admin.services');

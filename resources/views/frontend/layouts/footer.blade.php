@@ -11,7 +11,7 @@
                             <span class="icon flaticon-smartphone-1"></span>
                         </div>
                         <div class="text">Call Us Anytime</div>
-                        <h3>+ {{ isset($companyDetails->phone) ? $companyDetails->phone : ''  }}</h3>
+                        <h3>+91 {{ $data['phone'] ?? '' }}</h3>
                     </div>
                 </div>
 
@@ -21,8 +21,13 @@
                         <div class="icon-box">
                             <span class="icon flaticon-clock"></span>
                         </div>
-                        <div class="text">Opening Hours</div>
-                        <h3>Mon - Sat: 10am - 5pm</h3>
+                        <div class="text">Useful Links</div>
+                        <ul class="footer-links">
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/about') }}">About</a></li>
+                            <li><a href="{{ url('/ourservice') }}">Service</a></li>
+                            <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -33,7 +38,7 @@
                             <span class="icon flaticon-e-mail-envelope"></span>
                         </div>
                         <div class="text">Mail Us</div>
-                        <h3>{{ isset($companyDetails->email1) ? $companyDetails->email1 : "" }}</br> {{ isset($companyDetails->email2) ? $companyDetails->email2 : "" }} </h3>
+                        <h3>{{ $data['email1'] ?? '' }}<br> {{ $data['email2'] ?? '' }} </h3>
                     </div>
                 </div>
 
@@ -55,8 +60,8 @@
                                 <h2>ABOUT Comapny</h2>
                                 <div class="widget-content">
                                     <div class="text">
-                                        <p>Angel investor growth hacking adopters ramen funding bootstrapping
-                                            return on investment buzz business.</p>
+                                        <p>THRAEX CO. is a ingenious company, consistently working on technology innovation of foundry equipment /
+                                            heavy-duty process equipment & plant.</p>
                                     </div>
                                 </div>
                                 <div class="social-links-two">

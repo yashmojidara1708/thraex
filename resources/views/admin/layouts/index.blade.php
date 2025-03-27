@@ -19,11 +19,10 @@
     <title> @yield('admin-title') </title>
 
     <!-- FAVICON -->
-    <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/brand-logos/favicon.ico') }}"
-        type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}" type="image/x-icon">
 
     <!-- ICONS CSS -->
-    <link href="{{ asset('assets/admin/assets/build/assets/iconfonts/icons.css') }}" rel="stylesheet">
+    <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon'])  }}" type="image/x-icon">
 
     <!-- APP SCSS -->
     <link rel="preload" as="style" href="{{ asset('assets/admin/assets/build/assets/app-698853b8.css') }}" />
@@ -50,6 +49,8 @@
 
     <!-- Toastr CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 

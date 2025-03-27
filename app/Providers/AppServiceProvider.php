@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
+use App\Models\Settings;
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,7 +28,29 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
 
         // Share company details with all views
-        $companyDetails = DB::table('company_details')->first();
-        View::share('companyDetails', $companyDetails);
+        // $companyDetails = DB::table('company_details')->first();
+
+        $settings = Settings::all();
+        $data = [];
+
+        foreach ($settings as $setting) {
+            $data[$setting->name] = $setting->value;
+        }
+
+        $users = User::all();
+        $userList = [];
+
+        foreach ($users as $user) {
+            $userList[] = [
+                'id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email
+            ];
+        }
+
+        View::share([
+            'data' => $data,
+            'userList' => $userList
+        ]);
     }
 }

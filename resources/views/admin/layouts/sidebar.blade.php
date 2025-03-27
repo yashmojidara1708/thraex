@@ -2,14 +2,15 @@
 
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header">
-        <a href="index.html" class="header-logo">
+        {{-- <a href="index.html" class="header-logo">
             <img src="build/assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
             <img src="build/assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
             <img src="build/assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
             <img src="build/assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
             <img src="build/assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
             <img src="build/assets/images/brand-logos/toggle-white.png" alt="logo" class="toggle-white">
-        </a>
+        </a> --}}
+        <h1 class="text-white d-flex font-bold text-3xl mt-4 mb-2">Admin</h1>
     </div>
     <!-- End::main-sidebar-header -->
 
@@ -28,9 +29,10 @@
                 <!-- End::slide__category -->
 
                 <!-- Start::slide -->
-                <li class="slide">
-                    <a href="{{ route('dashboard') }}" class="side-menu__item">
-                        <i class="bx bx-home side-menu__icon"></i>
+
+                <li class="slide {{ request()->routeIs('admin.home') || request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('admin.dashboard') }}" class="side-menu__item">
+                        <i class="fas fa-desktop side-menu__icon"></i>
                         <span class="side-menu__label">Dashboards</span>
                     </a>
                 </li>
@@ -39,7 +41,7 @@
                 <!-- End::slide -->
                 <li class="slide">
                     <a href="{{ route('admin.services') }}" class="side-menu__item">
-                        <i class="bx bx-home side-menu__icon"></i>
+                        <i class="fas fa-tools side-menu__icon"></i>
                         <span class="side-menu__label">Services</span>
                     </a>
 
@@ -47,7 +49,7 @@
 
                 <li class="slide">
                     <a href="{{ route('admin.settings') }}" class="side-menu__item">
-                        <i class="bx bx-home side-menu__icon"></i>
+                        <i class="fas fa-cog side-menu__icon"></i>
                         <span class="side-menu__label">Settings</span>
                     </a>
 

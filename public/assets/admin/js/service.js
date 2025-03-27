@@ -67,7 +67,6 @@ $(document).ready(function () {
                 },
                 success: function (response) {
                     if (response.success) {
-                        let toastMessage = response.message;
                         toastr.success(response.message, "Success", { timeOut: 3000 });
                         $("#formdata").modal("hide");
                         $("#form1")[0].reset();

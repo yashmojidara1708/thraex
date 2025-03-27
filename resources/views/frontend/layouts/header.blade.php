@@ -29,8 +29,12 @@
             <div class="clearfix">
 
                 <div class="pull-left logo-outer">
-                    <div class="logo"><a href="index.html"><img src="{{ asset('assets/frontend/images/logo.png') }}" alt=""
-                                title=""></a></div>
+                    <div class="logo">
+                            @if (!empty($data['logo']))
+                                <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . $data['logo']) }}"
+                                    alt="Company Logo" style="max-width: 100%; height: auto;">
+                            @endif
+                        </div>
                 </div>
 
                 <div class="pull-right upper-right clearfix">
@@ -40,8 +44,8 @@
                         <div class="icon-box"><span class="flaticon-pin"></span></div>
                         <ul>
                             <li><strong>Location</strong></li>
-                            <li>{{ isset($companyDetails->address) ? $companyDetails->address : ''  }}, {{ isset($companyDetails->city) ? $companyDetails->city : ''  }},
-                                {{ isset($companyDetails->state) ? $companyDetails->state : ''  }} - {{ isset($companyDetails->postal_code) ? $companyDetails->postal_code : ''  }}</li>
+
+                            <li>{{ $data['address'] ?? '' }}</li>
                         </ul>
                     </div>
 
@@ -50,7 +54,7 @@
                         <div class="icon-box"><span class="flaticon-smartphone-1"></span></div>
                         <ul>
                             <li><strong>CALL US</strong></li>
-                            <li>+{{ isset($companyDetails->phone) ? $companyDetails->phone : ''  }}</li>
+                            <li>+91 {{ $data['phone'] ?? '' }}</li>
                         </ul>
                     </div>
 
@@ -89,7 +93,8 @@
 
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class=" {{ request()->routeIs('home') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a>
+                            <li class=" {{ request()->routeIs('home') ? 'active' : '' }}"><a
+                                    href="{{ route('home') }}">Home</a>
                                 {{-- <ul>
                                     <li><a href="index.html">Homepage Style One</a></li>
                                     <li><a href="index-2.html">Homepage Style Two</a></li>
@@ -106,7 +111,8 @@
                             <li class=" {{ request()->routeIs('about') ? 'active' : '' }}">
                                 <a href="{{ route('about') }}">About</a>
                             </li>
-                            <li class=" {{ request()->routeIs('equipment.show') ? 'active' : '' }}"><a href="{{ route('equipment.show') }}">Services</a>
+                            <li class=" {{ request()->routeIs('equipment.show') ? 'active' : '' }}"><a
+                                    href="{{ route('equipment.show') }}">Services</a>
                                 <ul>
                                     {{-- <li><a href="services.html">Our Services</a></li>
                                     <li><a href="services-single.html">Agricultural Processing</a></li>
@@ -117,7 +123,8 @@
                                     <li><a href="services-single.html">Power and Energy</a></li> --}}
                                 </ul>
                             </li>
-                            <li class=" {{ request()->routeIs('contact') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact Us</a></li>
+                            <li class=" {{ request()->routeIs('contact') ? 'active' : '' }}"><a
+                                    href="{{ route('contact') }}">Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
