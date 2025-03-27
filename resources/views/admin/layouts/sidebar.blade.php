@@ -54,6 +54,14 @@
                     </a>
 
                 </li>
+
+                <li class="slide">
+                    <a href="{{ route('admin.contact_us') }}" class="side-menu__item">
+                        <i class="fas fa-address-book side-menu__icon"></i>
+                        <span class="side-menu__label">Contact-Us</span>
+                    </a>
+
+                </li>
             </ul>
         </nav>
         <!-- End::nav -->

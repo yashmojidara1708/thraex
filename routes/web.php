@@ -57,4 +57,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/settings', [App\Http\Controllers\admin\SettingsController::class, 'index'])->name('admin.settings');
     Route::post('/settings/save', [App\Http\Controllers\admin\SettingsController::class, 'save'])->name('admin.settings.save');
     Route::get('/settings/fetch', [App\Http\Controllers\admin\SettingsController::class, 'fetch'])->name('admin.settings.fetch');
+
+    Route::get('/contact_us', [App\Http\Controllers\admin\ContactUsController::class, 'index'])->name('admin.contact_us');
+    Route::get('/contact_us/fetch', [App\Http\Controllers\admin\ContactUsController::class, 'fetch'])->name('admin.contact_us.fetch');
 });
