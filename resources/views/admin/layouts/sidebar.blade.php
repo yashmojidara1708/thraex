@@ -2,15 +2,14 @@
 
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header">
-        {{-- <a href="index.html" class="header-logo">
-            <img src="build/assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
-            <img src="build/assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
-            <img src="build/assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
-            <img src="build/assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
-            <img src="build/assets/images/brand-logos/desktop-white.png" alt="logo" class="desktop-white">
-            <img src="build/assets/images/brand-logos/toggle-white.png" alt="logo" class="toggle-white">
-        </a> --}}
-        <h1 class="text-white d-flex font-bold text-3xl mt-4 mb-2">Admin</h1>
+        <a href="index.html" class="header-logo">
+            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . $data['logo']) }}" alt="logo"
+                class="desktop-logo">
+            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}"
+                alt="logo" class="toggle-logo">
+            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . $data['logo']) }}"
+                alt="logo" class="desktop-dark">
+        </a>
     </div>
     <!-- End::main-sidebar-header -->
 
@@ -30,7 +29,8 @@
 
                 <!-- Start::slide -->
 
-                <li class="slide {{ request()->routeIs('admin.home') || request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                <li
+                    class="slide {{ request()->routeIs('admin.home') || request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     <a href="{{ route('admin.dashboard') }}" class="side-menu__item">
                         <i class="fas fa-desktop side-menu__icon"></i>
                         <span class="side-menu__label">Dashboards</span>
