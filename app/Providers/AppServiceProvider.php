@@ -24,42 +24,34 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
         Schema::defaultStringLength(191);
 
-        // Share company details with all views
-        // $companyDetails = DB::table('company_details')->first();
-
-        $settings = Settings::all();
         $data = [];
+        $userList = [];
 
-        if (!empty($settings)) {
+        // Check if 'settings' table exists before querying
+        if (Schema::hasTable('settings')) {
+            $settings = Settings::all();
             foreach ($settings as $setting) {
                 $data[$setting->name] = $setting->value;
             }
-        } else {
-            $data = [];
         }
 
-        $users = User::all();
-        $userList = [];
-
-        if (!empty($users)) {
+        // Check if 'users' table exists before querying
+        if (Schema::hasTable('users')) {
+            $users = User::all();
             foreach ($users as $user) {
-            $userList[] = [
-                'id' => $user->id ?? '',
-                'name' => $user->name ?? '',
-                'email' => $user->email ?? ''
-            ];
+                $userList[] = [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email
+                ];
             }
-        } else {
-            $userList = [];
         }
 
         View::share([
-            'data' => $data ?? [],
-            'userList' => $userList ?? []
+            'data' => $data,
+            'userList' => $userList
         ]);
-
     }
 }
