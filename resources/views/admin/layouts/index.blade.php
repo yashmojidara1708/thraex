@@ -19,10 +19,16 @@
     <title> @yield('admin-title') </title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}" type="image/x-icon">
+     @if(!empty($data['favicon']))
+        <link rel="shortcut icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}" type="image/x-icon">
+    @else
+        <link rel="shortcut icon" href="{{ asset('assets/admin/assets/build/assets/images/brand-logos/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/brand-logos/favicon.ico') }}" type="image/x-icon">
+    @endif
 
     <!-- ICONS CSS -->
-    <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon'])  }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . ($data['favicon'] ?? ''))  }}" type="image/x-icon">
 
     <!-- APP SCSS -->
     <link rel="preload" as="style" href="{{ asset('assets/admin/assets/build/assets/app-698853b8.css') }}" />

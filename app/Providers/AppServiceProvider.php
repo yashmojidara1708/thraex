@@ -33,24 +33,33 @@ class AppServiceProvider extends ServiceProvider
         $settings = Settings::all();
         $data = [];
 
-        foreach ($settings as $setting) {
-            $data[$setting->name] = $setting->value;
+        if (!empty($settings)) {
+            foreach ($settings as $setting) {
+                $data[$setting->name] = $setting->value;
+            }
+        } else {
+            $data = [];
         }
 
         $users = User::all();
         $userList = [];
 
-        foreach ($users as $user) {
+        if (!empty($users)) {
+            foreach ($users as $user) {
             $userList[] = [
-                'id' => $user->id,
-                'name' => $user->name,
-                'email' => $user->email
+                'id' => $user->id ?? '',
+                'name' => $user->name ?? '',
+                'email' => $user->email ?? ''
             ];
+            }
+        } else {
+            $userList = [];
         }
 
         View::share([
-            'data' => $data,
-            'userList' => $userList
+            'data' => $data ?? [],
+            'userList' => $userList ?? []
         ]);
+
     }
 }

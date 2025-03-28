@@ -40,7 +40,7 @@
                 <div class="pull-right upper-right clearfix">
 
                     <!--Info Box-->
-                    <div class="upper-column info-box">
+                    <div class="upper-column info-box"> 
                         <div class="icon-box"><span class="flaticon-pin"></span></div>
                         <ul>
                             <li><strong>Location</strong></li>
@@ -57,15 +57,6 @@
                             <li>+91 {{ $data['phone'] ?? '' }}</li>
                         </ul>
                     </div>
-
-                    <!--Info Box-->
-                    {{-- <div class="upper-column info-box">
-                        <div class="icon-box"><span class="flaticon-clock"></span></div>
-                        <ul>
-                            <li><strong>TIMING</strong></li>
-                            <li>Mon - Sat: 10am - 5pm</li>
-                        </ul>
-                    </div> --}}
 
                 </div>
 

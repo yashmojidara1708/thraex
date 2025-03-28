@@ -820,7 +820,7 @@ li {
     .container p {
         font-size: 14px;
         line-height: 1.6;
-        text-align: justify; /* Justify for a cleaner look */
+        text-align: center; /* Justify for a cleaner look */
         padding: 0 10px; /* Add padding to prevent text touching edges */
     }
 
@@ -879,6 +879,11 @@ li {
     /* Reduce icon sizes */
     .vision-icon, .mission-icon {
         font-size: 62px;
+    }
+
+    /* Services Section */
+    .services-section {
+        padding: 50px 15px 20px; /* Adjust padding for mobile */
     }
 }
 

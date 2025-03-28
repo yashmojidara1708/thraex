@@ -3,11 +3,9 @@
     <!-- Start::main-sidebar-header -->
     <div class="main-sidebar-header">
         <a href="index.html" class="header-logo">
-            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . $data['logo']) }}" alt="logo"
+            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . ($data['logo'] ?? '')) }}" alt="logo"
                 class="desktop-logo">
-            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}"
-                alt="logo" class="toggle-logo">
-            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . $data['logo']) }}"
+            <img src="{{ asset('assets/admin/assets/build/assets/images/uploads/logo/' . ($data['logo'] ?? '')) }}"
                 alt="logo" class="desktop-dark">
         </a>
     </div>

@@ -22,10 +22,10 @@
     <title> {{ $data['company_name'] ?? '' }}</title>
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon']) }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . ($data['favicon'] ?? '')) }}" type="image/x-icon">
 
     <!-- ICONS CSS -->
-    <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . $data['favicon'])  }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/admin/assets/build/assets/images/uploads/icons/' . ($data['favicon'] ?? ''))  }}" type="image/x-icon">
 
     <!-- APP SCSS -->
     <link rel="preload" as="style" href="{{ asset('assets/admin/assets/build/assets/app-698853b8.css') }}" />

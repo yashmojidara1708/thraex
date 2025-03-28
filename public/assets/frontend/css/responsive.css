@@ -197,18 +197,18 @@
 		width: 100%;
 	}
 	
-	.main-header .header-upper .upper-column{
+	/* .main-header .header-upper .upper-column{
 		margin-left:0px;
 		width:100%;	
-	}
+	} */
 	
 	.main-header .header-upper .upper-column{
 		padding-right:0px;	
 	}
 	
 	.main-header .header-upper .upper-column.info-box {
-		display: block;
-		width:100%;
+		/* display: block;
+		width:100%; */
 		text-align:center;
 		padding:10px;
 		max-width:none;
