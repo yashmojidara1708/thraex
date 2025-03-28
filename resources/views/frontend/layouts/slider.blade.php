@@ -30,7 +30,7 @@
                         data-splitin="none" data-splitout="none" data-elementdelay="0.01" data-endelementdelay="0.3"
                         data-endspeed="1200" data-endeasing="Power4.easeIn"><a href="#"
                             class="theme-btn btn-style-two">READ
-                            MORE</a> &nbsp; &nbsp; <a href="contact.html" class="theme-btn btn-style-three">GET
+                            MORE</a> &nbsp; &nbsp; <a href="#" class="theme-btn btn-style-three">GET
                             A QUOTE</a></div>
 
                 </li>
@@ -61,7 +61,7 @@
                         data-splitin="none" data-splitout="none" data-elementdelay="0.01" data-endelementdelay="0.3"
                         data-endspeed="1200" data-endeasing="Power4.easeIn"><a href="#"
                             class="theme-btn btn-style-two">READ
-                            MORE</a> &nbsp; &nbsp; <a href="contact.html" class="theme-btn btn-style-three">GET A
+                            MORE</a> &nbsp; &nbsp; <a href="#" class="theme-btn btn-style-three">GET A
                             QUOTE</a></div>
 
                 </li>
@@ -93,7 +93,7 @@
                         data-splitin="none" data-splitout="none" data-elementdelay="0.01" data-endelementdelay="0.3"
                         data-endspeed="1200" data-endeasing="Power4.easeIn"><a href="#"
                             class="theme-btn btn-style-two">READ
-                            MORE</a> &nbsp; &nbsp; <a href="contact.html" class="theme-btn btn-style-four">GET
+                            MORE</a> &nbsp; &nbsp; <a href="#" class="theme-btn btn-style-four">GET
                             A QUOTE</a></div>
 
                 </li>
